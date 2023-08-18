@@ -146,3 +146,7 @@ Instructions for this problem set is available at [docs/sml_problem_set_a](docs/
 ### 5. Problem Set B
 
 Instructions for this problem set is available at [docs/sml_problem_set_b](docs/sml_problem_set_b.pdf).
+
+## Credits
+
+To the best of my knowledge, the Racket Problem Set A has been designed by [amsen20](https://github.com/amsen20).
