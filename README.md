@@ -7,52 +7,53 @@ written in Racket and SML.
 
 ### 1. `get_inversions`
 
-Write a function named 𝑔𝑒𝑡 𝑖𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛𝑠 which gets an array 𝐴 of integers and returns the number of inversions in the
-Array.
-Aninversionisapairofintegers𝑖,𝑗which𝑖 < 𝑗and𝐴𝑖 >𝐴𝑗.
+Write a function named `get_inversions` which gets an array `A` of integers and returns the number of inversions in the
+array. An inversion is a pair of integers `(i, j)` which `i < j` and `A𝑖 > A𝑗`.
 Example:
 
 > (get_inversions '(1 2 3 4))
-> 0
+>> 0
 
 > (get_inversions '(4 3 1 5))
-> 3
+>> 3
 
 ### 2. `diff_envs`
 
-Let’s define an environment 𝐸𝑛𝑣 a mapping from variables to values. Consider a list of pairs in which each pair’s first
-element is a string (variable’s name) and second element is an integer (variable’s value) as a presentation of an
-environment in racket language.
-For example consider an environment 𝐸 a mapping from 𝐴 to 2 and from 𝐵 to 3, following list is the presentation of 𝐸:
-`'(("A" . 2) ("B" . 3))`,
+Let’s define an environment `Env` a mapping from variables to values. Consider a list of pairs in which each pair’s
+first
+element is a string (variable’s name) and the second element is an integer (value of the variable) as a representation
+of an
+environment in the Racket language.
+For example consider an environment `E` that a mapping from `A --> 2` and from `B --> 3`. The following list is the
+representation of `E`:
+`'(("A" . 2) ("B" . 3))`.
 
-Write a function named 𝑑𝑖𝑓𝑓_𝑒𝑛𝑣𝑠 which gets two environments 𝐸1 and 𝐸2
+Write a function named `diff_envs` which gets two environments `E1` and `𝐸2`
 and returns a list of keys which two environments have different values for. Note that both environments should include
 the different keys but with not the same values.
 Example:
 > (list (cons "A" 2) (cons "B" 1) (cons "C" 2))
-'(("A" . 2) ("B" . 1) ("C" . 2))
+>> '(("A" . 2) ("B" . 1) ("C" . 2))
 
 > (list (cons "B" 1) (cons "C" 4))
-'(("B" . 1) ("C" . 4))
+>> '(("B" . 1) ("C" . 4))
 
-> (diff_envs (list (cons "A" 2) (cons "B" 1) (cons "C" 2)) (list
-(cons "B" 1) (cons "C" 4)))
-'("C")
+> (diff_envs (list (cons "A" 2) (cons "B" 1) (cons "C" 2)) (list (cons "B" 1) (cons "C" 4)))
+>> '("C")
 
 ### 3. `generate_all`
 
 A bracket sequence is called regular if it is possible to obtain correct arithmetic expression by inserting
-characters “+” and “1” into this sequence. For example, sequences “(())()”, “()” and “(()(()))” are regular,
-while “)(“, “(()” and “(()))(“ are not.
-Write a function named 𝑔𝑒𝑛𝑒𝑟𝑎𝑡𝑒 𝑎𝑙𝑙 which gets a number 𝑁 and returns
-list of all regular bracket sequence of length 2 × 𝑁.
+characters “+” and “1” into this sequence. For example, sequences `“(())()”`, `“()”` and `“(()(()))”` are regular,
+while `“)(“`, `“(()”` and `“(()))(“` are not.
+Write a function named `generate_all` which gets a number `N` and returns the list of all regular bracket sequence of
+length `2 × N`.
 Example:
 > (generate_all 1)
-'("()")
+>> '("()")
 
 > (generate_all 2)
-'("(())" "()()")
+>> '("(())" "()()")
 
 ### 4. `depth_tree`
 
